@@ -1,0 +1,11 @@
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\bin\Debug\net9.0\SimpleFileClipper.Lib.deps.json
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\bin\Debug\net9.0\SimpleFileClipper.Lib.dll
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\bin\Debug\net9.0\SimpleFileClipper.Lib.pdb
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.AssemblyInfoInputs.cache
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.AssemblyInfo.cs
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.csproj.CoreCompileInputs.cache
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.dll
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\refint\SimpleFileClipper.Lib.dll
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\SimpleFileClipper.Lib.pdb
+C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\obj\Debug\net9.0\ref\SimpleFileClipper.Lib.dll
