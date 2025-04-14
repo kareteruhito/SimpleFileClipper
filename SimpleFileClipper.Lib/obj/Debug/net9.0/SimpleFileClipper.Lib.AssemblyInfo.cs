@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimpleFileClipper.Lib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+471b62f9dc845198606f1b808c9e0d7120eea6f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+468fb2d35536d3055231a2cc9af8d7d68e381e73")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimpleFileClipper.Lib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimpleFileClipper.Lib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,136 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "SimpleFileClipper.WPFApp/1.0.0": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
+          "ReactiveProperty.WPF": "9.7.0",
+          "SimpleFileClipper.Lib": "1.0.0"
+        },
+        "runtime": {
+          "SimpleFileClipper.WPFApp.dll": {}
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.135.29210"
+          }
+        }
+      },
+      "ReactiveProperty/9.7.0": {
+        "dependencies": {
+          "ReactiveProperty.Core": "9.7.0",
+          "System.ComponentModel.Annotations": "5.0.0",
+          "System.Reactive": "6.0.1"
+        },
+        "runtime": {
+          "lib/net9.0/ReactiveProperty.dll": {
+            "assemblyVersion": "9.7.0.0",
+            "fileVersion": "9.7.0.0"
+          }
+        }
+      },
+      "ReactiveProperty.Core/9.7.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "5.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/ReactiveProperty.Core.dll": {
+            "assemblyVersion": "9.7.0.0",
+            "fileVersion": "9.7.0.0"
+          }
+        }
+      },
+      "ReactiveProperty.WPF/9.7.0": {
+        "dependencies": {
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.135",
+          "ReactiveProperty": "9.7.0"
+        },
+        "runtime": {
+          "lib/net9.0-windows7.0/ReactiveProperty.WPF.dll": {
+            "assemblyVersion": "9.7.0.0",
+            "fileVersion": "9.7.0.0"
+          }
+        }
+      },
+      "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Reactive/6.0.1": {
+        "runtime": {
+          "lib/net6.0/System.Reactive.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.1.7420"
+          }
+        }
+      },
+      "SimpleFileClipper.Lib/1.0.0": {
+        "runtime": {
+          "SimpleFileClipper.Lib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SimpleFileClipper.WPFApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.135": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r8qBEXmQfORso2+MVHnt8PSH4761zJ0SIxgQTSEDVLU97EN2FZdG6/ZCYUPhQy+OrPKgnpYBCAs3PS6Bs7wRsg==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.135",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512"
+    },
+    "ReactiveProperty/9.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Chm/sEmnOjNZ8mKrB1wguJfrKaGy/7KSvs6uij+LMzlgb6Ozq7x8/dJYrWutdk3IUUl/EsjaCIMAPOLl5FRDOA==",
+      "path": "reactiveproperty/9.7.0",
+      "hashPath": "reactiveproperty.9.7.0.nupkg.sha512"
+    },
+    "ReactiveProperty.Core/9.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RPjkQD0d0uMF7fC9t9EY1anF+HzwGsx+EXYWq0BHah5Y2pQZbQ/szOPYhsGdu0JsawiknlubC6hIE2rTokWWYQ==",
+      "path": "reactiveproperty.core/9.7.0",
+      "hashPath": "reactiveproperty.core.9.7.0.nupkg.sha512"
+    },
+    "ReactiveProperty.WPF/9.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gDbmRy1Un3be5kKkkgJMS4JQr8mDabj69Yisfj06HqtXfITDMwA4bWrSvkvL7wHjFwcZjQ00jufxYKK8b0c2pA==",
+      "path": "reactiveproperty.wpf/9.7.0",
+      "hashPath": "reactiveproperty.wpf.9.7.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
+      "path": "system.componentmodel.annotations/5.0.0",
+      "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Reactive/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rHaWtKDwCi9qJ3ObKo8LHPMuuwv33YbmQi7TcUK1C264V3MFnOr5Im7QgCTdLniztP3GJyeiSg5x8NqYJFqRmg==",
+      "path": "system.reactive/6.0.1",
+      "hashPath": "system.reactive.6.0.1.nupkg.sha512"
+    },
+    "SimpleFileClipper.Lib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

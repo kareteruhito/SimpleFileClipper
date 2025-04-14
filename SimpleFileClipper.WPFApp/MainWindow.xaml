@@ -16,6 +16,122 @@
   <i:Interaction.Behaviors>
     <local:ViewModelCleanupBehavior />
   </i:Interaction.Behaviors>
-  <Grid>
-  </Grid>
+       <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+              <!-- メニュー ここから-->
+                <Menu FontSize="16" Margin="2">
+                    <MenuItem Header="File">
+                        <MenuItem Header="Close" />
+                    </MenuItem>
+                </Menu>
+              <!-- メニュー ここまで-->
+              <!-- キーワードボックス ここから-->
+                <DockPanel>
+                    <ComboBox Margin="2" IsEditable="True" />
+                </DockPanel>
+              <!-- キーワードボックス ここから-->
+            </StackPanel>
+            <!-- ステータスバー -->
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem Content="ステータス" />
+            </StatusBar>
+            <!-- ステータスバー -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <DockPanel Grid.Column="0">
+<!-- リストビュー　ここから -->
+                    <ListView
+                        x:Name="FileListView"
+                        IsSynchronizedWithCurrentItem="True" >
+                        <ListView.Resources>
+                            <Style x:Key="listviewHeaderStyle" TargetType="GridViewColumnHeader">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.Resources>
+
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{StaticResource listviewHeaderStyle}">
+            <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName SortName-->
+                                <GridViewColumn Width="300"
+                                    Header="名前">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Width="32" Height="32" ></Image>
+                                                <TextBlock Width="Auto" TextAlignment="Left" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+            <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName Comment-->
+                                <GridViewColumn Width="Auto"
+                                    Header="コメント">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Width="300" TextAlignment="Left" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+<!-- リストビュー　ここまで -->
+                </DockPanel>
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+                <DockPanel Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="5" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+<!-- コメント ここから -->
+                        <StackPanel
+                            Margin="10"
+                            Grid.Row="0">
+                            <Label>コメント</Label>
+                            <TextBox
+                                AcceptsReturn="True"
+                                TextWrapping="Wrap"
+                                VerticalContentAlignment="Top"
+                                Height = "400">
+                            </TextBox>
+<!-- コメント ここまで -->
+                        </StackPanel> 
+                        <GridSplitter
+                            Grid.Row="1"
+                            HorizontalAlignment="Stretch" />        
+                        <DockPanel
+                            AllowDrop="True"
+                            Margin = "10"
+                            Grid.Row="2">
+<!-- 画像プレビュー ここから -->
+                            <Image />
+<!-- 画像プレビュー ここまで -->
+<!-- テキストプレビュー ここから -->
+                            <TextBox
+                                IsReadOnly="True"
+                                FontFamily="Consolas" 
+                                FontSize="14"
+                                AcceptsReturn="True"
+                                TextWrapping="Wrap"
+                                VerticalContentAlignment="Top"
+                                Width = "600"                                
+                                Height = "400" />
+<!-- テキストプレビュー ここまで -->
+<!-- 音声再生 ここから -->
+                            <Button
+                                FontSize="32"
+                                Width = "256"                                
+                                Height = "256" />
+<!-- 音声再生 ここまで -->
+                        </DockPanel> 
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </DockPanel>
 </Window>

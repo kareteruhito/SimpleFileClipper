@@ -3,6 +3,7 @@
     <ProjectReference Include="..\SimpleFileClipper.Lib\SimpleFileClipper.Lib.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ReactiveProperty" Version="9.7.0" />
     <PackageReference Include="System.Console" Version="4.3.1" />
   </ItemGroup>
   <PropertyGroup>
@@ -10,5 +11,6 @@
     <TargetFramework>net9.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
 </Project>
