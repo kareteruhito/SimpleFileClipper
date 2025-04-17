@@ -1,14 +1,35 @@
 ﻿using Reactive.Bindings;
+using SimpleFileClipper.Lib;
 
 namespace SimpleFileClipper;
 
 class Program
 {
-    static void Main()
+    public static async Task Main()
     {
-        string className = SimpleFileClipper.Lib.Class1.CLASS_NAME;
-        Console.WriteLine($"ClassName:{className}");
-        
-        ReactiveCollection<string> List = [];
+        using var db = new FileRecordRepository();
+
+        string path = @"C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\SimpleFileClipper.Lib.csproj";
+        string path2 = @"C:\Users\karet\git\SimpleFileClipper\SimpleFileClipper.Lib\FileRecord.cs";
+
+        await db.UpsertFileRecord(new FileRecord()
+        {
+            Path = path,
+            Memo = "メモ"
+        });
+        await db.UpsertFileRecord(new FileRecord()
+        {
+            Path = path2,
+            Memo = "メモる"
+        });
+        foreach(var f in await db.FindRecord("Clipper"))
+        {
+            Console.WriteLine($"Path:{f.Path} Memo:{f.Memo}");
+        }
+        int result = await db.DeleteFileRecord(path);
+        if (result > 0)
+        {
+            Console.WriteLine($"{path}の削除に成功しました。");
+        }
     }
 }
