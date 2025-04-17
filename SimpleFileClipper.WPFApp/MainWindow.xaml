@@ -46,33 +46,42 @@
 <!-- リストビュー　ここから -->
                     <ListView
                         x:Name="FileListView"
+                        ItemsSource="{Binding FileRecords}"
                         IsSynchronizedWithCurrentItem="True" >
                         <ListView.Resources>
                             <Style x:Key="listviewHeaderStyle" TargetType="GridViewColumnHeader">
                                 <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                             </Style>
                         </ListView.Resources>
+            <!-- ソートビヘイビア ここから -->
+                        <i:Interaction.Behaviors>
+                            <local:ListViewSortBehavior />
+                            <local:FileDropBehavior Command="{Binding DropCommand}"/>
+                        </i:Interaction.Behaviors>
+            <!-- ソートビヘイビア ここまで -->
 
                         <ListView.View>
                             <GridView ColumnHeaderContainerStyle="{StaticResource listviewHeaderStyle}">
             <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName SortName-->
                                 <GridViewColumn Width="300"
+                                    local:ListViewSortBehavior.SortPropertyName="SortName"
                                     Header="名前">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <Image Width="32" Height="32" ></Image>
-                                                <TextBlock Width="Auto" TextAlignment="Left" />
+                                                <TextBlock Width="Auto" TextAlignment="Left" Text="{Binding Path}" />
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-            <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName Comment-->
+            <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName Memo -->
                                 <GridViewColumn Width="Auto"
-                                    Header="コメント">
+                                    local:ListViewSortBehavior.SortPropertyName="Memo"
+                                    Header="メモ">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Width="300" TextAlignment="Left" />
+                                            <TextBlock Width="300" TextAlignment="Left" Text="{Binding Memo}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>

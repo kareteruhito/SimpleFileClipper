@@ -1,10 +1,6 @@
-﻿using System.Xml;
-using System.Xml.Schema;
-
+﻿
 using Microsoft.Xaml.Behaviors;
-using System;
 using System.Windows;
-using System.ComponentModel;
 
 namespace SimpleFileClipper.WPFApp;
 
