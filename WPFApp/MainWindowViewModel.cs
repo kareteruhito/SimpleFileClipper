@@ -24,7 +24,8 @@ public class MainWindowViewModel : INotifyPropertyChanged, IDisposable
     FileRecordRepository _db = new();
 
     public ReactiveCommand<string[]> DropCommand { get; }
-    public ReactiveCollection<FileRecord> FileRecords { get; set; } = [];
+    public ReactiveCollection<FileRecordModel> FileRecords { get; set; } = [];
+    public ReactiveProperty<FileRecordModel> FileRecordsSelected { get; set; } = new();
     public MainWindowViewModel()
     {
         Title.AddTo(this.Disposable);
@@ -59,7 +60,35 @@ public class MainWindowViewModel : INotifyPropertyChanged, IDisposable
 
         foreach(var file in files)
         {
-            FileRecords.AddOnScheduler(file);
+            if (!System.IO.Path.Exists(file.Path))
+            {
+                await _db.DeleteFileRecord(file.Path);
+                continue;
+            }
+            ReactiveProperty<string> memo = new (file.Memo);
+            memo.Subscribe(async e=>
+            {
+                if (FileRecordsSelected is null) return;
+                if (FileRecordsSelected.Value is null) return;
+
+                string pathStr = FileRecordsSelected.Value.Path;
+                string memoStr = FileRecordsSelected.Value.Memo.Value;
+
+                if (e != memoStr) return;
+                FileRecord record = new()
+                {
+                    Path = pathStr,
+                    Memo = memoStr,
+                };
+                await _db.UpsertFileRecord(record);
+            });
+            var fileModel = new FileRecordModel()
+            {
+                Path = file.Path,
+                Memo = memo,
+                IsFile = System.IO.File.Exists(file.Path),
+            };
+            FileRecords.AddOnScheduler(fileModel);
         }
     }
 }

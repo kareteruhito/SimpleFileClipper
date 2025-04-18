@@ -47,6 +47,7 @@
                     <ListView
                         x:Name="FileListView"
                         ItemsSource="{Binding FileRecords}"
+                        SelectedValue ="{Binding FileRecordsSelected.Value}"
                         IsSynchronizedWithCurrentItem="True" >
                         <ListView.Resources>
                             <Style x:Key="listviewHeaderStyle" TargetType="GridViewColumnHeader">
@@ -63,14 +64,16 @@
                         <ListView.View>
                             <GridView ColumnHeaderContainerStyle="{StaticResource listviewHeaderStyle}">
             <!-- ソートビヘイビア ListViewSortBehavior.SortPropertyName SortName-->
-                                <GridViewColumn Width="300"
+                                <GridViewColumn Width="200"
                                     local:ListViewSortBehavior.SortPropertyName="SortName"
                                     Header="名前">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Image Width="32" Height="32" ></Image>
-                                                <TextBlock Width="Auto" TextAlignment="Left" Text="{Binding Path}" />
+                                                <Path Width="24" Height="24" Margin="2,2,8,2"
+                                                    Stroke="Black" Fill="White" Stretch="Fill"  StrokeThickness="3"
+                                                    Data="{Binding IconString}" />
+                                                <TextBlock Width="Auto" TextAlignment="Left" Text="{Binding Name}" />
                                             </StackPanel>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
@@ -81,7 +84,7 @@
                                     Header="メモ">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBlock Width="300" TextAlignment="Left" Text="{Binding Memo}" />
+                                            <TextBlock Width="300" TextAlignment="Left" Text="{Binding Memo.Value}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
@@ -107,7 +110,8 @@
                                 AcceptsReturn="True"
                                 TextWrapping="Wrap"
                                 VerticalContentAlignment="Top"
-                                Height = "400">
+                                Height = "400"
+                                Text="{Binding FileRecords/Memo.Value}">
                             </TextBox>
 <!-- コメント ここまで -->
                         </StackPanel> 
