@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.Lib", "SimpleFileClipper.Lib\SimpleFileClipper.Lib.csproj", "{EDD13AEC-07A3-4EF2-AA6D-66E2D9970F90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.Lib", "Lib\SimpleFileClipper.Lib.csproj", "{EDD13AEC-07A3-4EF2-AA6D-66E2D9970F90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.WPFApp", "SimpleFileClipper.WPFApp\SimpleFileClipper.WPFApp.csproj", "{F318B7C8-F8D4-4C8E-98EF-AA11225EEBEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.WPFApp", "WPFApp\SimpleFileClipper.WPFApp.csproj", "{F318B7C8-F8D4-4C8E-98EF-AA11225EEBEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.ConsoleApp", "SimpleFileClipper.ConsoleApp\SimpleFileClipper.ConsoleApp.csproj", "{166EA972-F7E5-469B-9ABB-9E1EA53CE577}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFileClipper.ConsoleApp", "ConsoleApp\SimpleFileClipper.ConsoleApp.csproj", "{166EA972-F7E5-469B-9ABB-9E1EA53CE577}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
