@@ -27,7 +27,9 @@
               <!-- メニュー ここまで-->
               <!-- キーワードボックス ここから-->
                 <DockPanel>
-                    <ComboBox Margin="2" IsEditable="True" />
+                    <ComboBox Margin="2" IsEditable="True"
+                        ItemsSource="{Binding SearchWords}"
+                        DisplayMemberPath="SearchWord" />
                 </DockPanel>
               <!-- キーワードボックス ここから-->
             </StackPanel>

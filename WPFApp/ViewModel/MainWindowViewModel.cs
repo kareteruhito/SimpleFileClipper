@@ -17,7 +17,6 @@ public class MainWindowViewModel : INotifyPropertyChanged, IDisposable
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     // IDisposable
     private CompositeDisposable Disposable { get; } = [];
-    public void Dispose() => Disposable.Dispose();
 #endregion
     public ReactiveProperty<string> Title { get; private set; } = new ("FileClipper");
 
@@ -26,10 +25,20 @@ public class MainWindowViewModel : INotifyPropertyChanged, IDisposable
     public ReactiveCommand<string[]> DropCommand { get; }
     public ReactiveCollection<FileRecordModel> FileRecords { get; set; } = [];
     public ReactiveProperty<FileRecordModel> FileRecordsSelected { get; set; } = new();
+
+    // 検索文字列
+    public ReactiveCollection<SearchWordModel> SearchWords { get; private set; } = [];
+    // コンストラクタ
     public MainWindowViewModel()
     {
         Title.AddTo(this.Disposable);
         _db.AddTo(this.Disposable);
+
+        // 検索文字列のロード
+        foreach(var item in SearchWordService.Load())
+        {
+            SearchWords.AddOnScheduler(item);
+        }
 
         DropCommand = new ReactiveCommand<string[]>().WithSubscribe(
             async files=>{
@@ -40,6 +49,14 @@ public class MainWindowViewModel : INotifyPropertyChanged, IDisposable
             }).AddTo(this.Disposable);
         
         Update();
+    }
+    // Dispose
+    public void Dispose()
+    {
+        // 検索文字列のセーブ
+        SearchWordService.Save(SearchWords);
+        
+        Disposable.Dispose();
     }
     public async void Update()
     {
